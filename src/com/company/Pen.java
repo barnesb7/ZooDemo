@@ -14,6 +14,26 @@ public class Pen {
         this.penName = penName;
     }
 
+
+    public void removeBabyAnimalByName(String nameOfAnimal){
+        for(int i = 0; i < babyAnimals.size(); i++){
+            if(babyAnimals.get(i).getName().equals(nameOfAnimal)){
+                babyAnimals.remove(i);
+                System.out.println("The baby animal has been removed");
+            }
+        }
+    }
+
+
+    public void removeAdultAnimalByName(String nameOfAnimal){
+        for(int i = 0; i < grownUpAnimals.size(); i++){
+            if(grownUpAnimals.get(i).getName().equals(nameOfAnimal)){
+                grownUpAnimals.remove(i);
+                System.out.println("The adult animal has been removed");
+            }
+        }
+    }
+
     public void addAdultAnimal(Animal animalToAdd){
         grownUpAnimals.add(animalToAdd);
         System.out.println("Your adult animal has been added to the pen: " + penName);

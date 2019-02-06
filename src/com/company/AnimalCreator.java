@@ -4,12 +4,16 @@ import java.util.Scanner;
 
 public class AnimalCreator {
 
+    private String name;
     private String species;
     private String size;
     private String gender;
     boolean isCute;
 
     public Animal createAnimal(String animalType, Scanner scan){
+
+        System.out.println("What is the name of your animal?");
+        name = scan.nextLine();
 
         System.out.println("What is the species of your animal");
         species = scan.nextLine();
@@ -33,12 +37,12 @@ public class AnimalCreator {
             }
 
             System.out.println("Your new baby animal has been created.");
-            return new BabyAnimal(species, size, gender, isCute);
+            return new BabyAnimal(name, species, size, gender, isCute);
 
 
         } else {
             System.out.println("Your new animal has been created");
-            return new Animal(species, size, gender);
+            return new Animal(name, species, size, gender);
         }
 
 

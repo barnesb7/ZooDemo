@@ -56,6 +56,24 @@ public class Zoo {
         }
     }
 
+    public void removeAnimalFromPenByName(String penName, String babyOrAdult, String nameOfAnimalToRemove){
+            for(int i = 0; i < allZooPens.size(); i++){
+                if(allZooPens.get(i).getPenName().equals(penName)){
+                    if(babyOrAdult.equals("baby")){
+
+                        allZooPens.get(i).removeBabyAnimalByName(nameOfAnimalToRemove);
+
+                    } else if (babyOrAdult.equals("adult")){
+
+                        allZooPens.get(i).removeAdultAnimalByName(nameOfAnimalToRemove);
+                    }
+
+                }
+            }
+
+    }
+
+
     public void showAllPens(){
         System.out.println(allZooPens);
     }
