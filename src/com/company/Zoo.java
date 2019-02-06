@@ -6,6 +6,12 @@ public class Zoo {
     private ArrayList<Pen> allZooPens = new ArrayList<>();
 
 
+    public void displayAllAnimals(){
+        for(Pen pen: allZooPens){
+            pen.displayPenDetails();
+        }
+    }
+
     public void addPen(Pen newPen){
         allZooPens.add(newPen);
     }
@@ -23,6 +29,27 @@ public class Zoo {
         }
     }
 
+
+    public void addAnimalToPen(String penName, String animalType, Animal animalToAdd){
+
+        for(int i = 0; i < allZooPens.size(); i++){
+            if(allZooPens.get(i).getPenName().equals(penName)){
+
+                if(animalType.equals("adult")){
+                    allZooPens.get(i).addAdultAnimal(animalToAdd);
+
+                } else if(animalType.equals("baby")){
+                    allZooPens.get(i).addBabyAnimal(animalToAdd);
+                }
+
+            }
+
+            if(i == (allZooPens.size()-1) || allZooPens.size() == 0){
+                System.out.println("Sorry, a pen with the name - " + penName + " - could not be found.");
+            }
+
+        }
+    }
 
     public void showAllPens(){
         System.out.println(allZooPens);

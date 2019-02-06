@@ -6,10 +6,17 @@ public class Animal {
     private String size;
     private String gender;
 
+
+    public Animal(){}
+
     public Animal(String species, String size, String gender){
         this.species = species;
         this.size = size;
         this.gender = gender;
+    }
+
+    public void printDetails(){
+        System.out.println("Species: " + species + " , Size: " + size + " , Gender: " + gender );
     }
 
     public String getSpecies() {

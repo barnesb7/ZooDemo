@@ -14,6 +14,30 @@ public class Pen {
         this.penName = penName;
     }
 
+    public void addAdultAnimal(Animal animalToAdd){
+        grownUpAnimals.add(animalToAdd);
+        System.out.println("Your adult animal has been added to the pen: " + penName);
+    }
+
+    public void addBabyAnimal(Animal animalToAdd){
+        babyAnimals.add(animalToAdd);
+        System.out.println("Your baby animal has been added to the pen: " + penName);
+
+    }
+
+    public void displayPenDetails(){
+        System.out.println("Pen name: " + penName);
+
+        for(int i = 0; i < grownUpAnimals.size(); i++){
+            grownUpAnimals.get(i).printDetails();
+        }
+
+        for(int i = 0; i < babyAnimals.size(); i++){
+            babyAnimals.get(i).printDetails();
+        }
+
+    }
+
     public ArrayList<Animal> getGrownUpAnimals() {
         return grownUpAnimals;
     }

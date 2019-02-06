@@ -31,11 +31,37 @@ public class MainMenuHandler {
            ourZoo.showAllPens();
        } else if(userInput.equals(addAnimalToPen)){
 
+           AnimalCreator animalCreator = new AnimalCreator();
+
+           Animal animalToAdd = new Animal();
+           String animalType = "";
+           String penName;
+
+           System.out.println("Would you like to add a [1] Adult Animal or [2] Baby Animal");
+           userInput = scan.nextLine();
+
+           if(userInput.equals("1")){
+              animalToAdd = animalCreator.createAnimal("adult", scan);
+              animalType = "adult";
+           } else if (userInput.equals("2")){
+             animalToAdd = animalCreator.createAnimal("baby", scan);
+             animalType = "baby";
+           } else {
+               System.out.println("Sorry," + userInput +  " ,was not a valid option.");
+           }
+
+           System.out.println("What is the name of the pen you would like to add the animal to?");
+           penName = scan.nextLine();
+
+           ourZoo.addAnimalToPen(penName, animalType, animalToAdd);
+
        } else if(userInput.equals(removeAnimalFromPen)){
 
        } else if(userInput.equals(displayAllAnimalsInPen)){
 
        } else if(userInput.equals(displayAllZooAnimals)){
+
+           ourZoo.displayAllAnimals();
 
        } else {
            System.out.println("Invalid option. Please choose a valid option from menu.");

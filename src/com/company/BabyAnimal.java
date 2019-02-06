@@ -9,6 +9,12 @@ public class BabyAnimal extends Animal {
         this.isCute = isCute;
     }
 
+
+    @Override
+    public void printDetails(){
+        System.out.println("Species: " + getSpecies() + " , Size: " + getSize() + " , Gender: " + getGender() + " , Are cute: " + isCute );
+    }
+
     public boolean isCute() {
         return isCute;
     }
