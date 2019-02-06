@@ -11,11 +11,15 @@ public class ZooDemo {
      Scanner scan = new Scanner(System.in);
      UserMenu userMenu = new UserMenu();
     String userInput;
+    boolean shouldContinue = true;
 
-     userMenu.showMainMenu();
-     userInput = scan.nextLine();
 
-     mainMenuHandler.handleUserInput(userInput, ourZoo, scan);
+    do {
+        userMenu.showMainMenu();
+        userInput = scan.nextLine();
+
+        mainMenuHandler.handleUserInput(userInput, ourZoo, scan);
+    } while(shouldContinue);
 
     }
 }

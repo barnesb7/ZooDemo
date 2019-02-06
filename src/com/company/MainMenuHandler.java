@@ -19,9 +19,16 @@ public class MainMenuHandler {
            userInput = scan.nextLine();
            Pen newPen = new Pen(userInput);
            ourZoo.addPen(newPen);
+           System.out.println("The new pen, " + userInput + " has been added to the zoo.");
+
+           ourZoo.showAllPens();
 
        } else if(userInput.equals(removePen)){
+           System.out.println("What is the name of the pen you would like to remove?");
+           userInput = scan.nextLine();
+           ourZoo.removePenByName(userInput);
 
+           ourZoo.showAllPens();
        } else if(userInput.equals(addAnimalToPen)){
 
        } else if(userInput.equals(removeAnimalFromPen)){
