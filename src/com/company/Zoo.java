@@ -12,6 +12,15 @@ public class Zoo {
         }
     }
 
+    public void displayPenInfoByPenName(String userInputPenName){
+        for(Pen pen: allZooPens){
+            if(pen.getPenName().equals(userInputPenName)){
+                pen.displayPenDetails();
+            }
+        }
+    }
+
+
     public void addPen(Pen newPen){
         allZooPens.add(newPen);
     }
@@ -42,10 +51,6 @@ public class Zoo {
                     allZooPens.get(i).addBabyAnimal(animalToAdd);
                 }
 
-            }
-
-            if(i == (allZooPens.size()-1) || allZooPens.size() == 0){
-                System.out.println("Sorry, a pen with the name - " + penName + " - could not be found.");
             }
 
         }

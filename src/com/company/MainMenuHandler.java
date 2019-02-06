@@ -58,6 +58,9 @@ public class MainMenuHandler {
        } else if(userInput.equals(removeAnimalFromPen)){
 
        } else if(userInput.equals(displayAllAnimalsInPen)){
+           System.out.println("What is the name of the pen?");
+           userInput = scan.nextLine();
+           ourZoo.displayPenInfoByPenName(userInput);
 
        } else if(userInput.equals(displayAllZooAnimals)){
 
