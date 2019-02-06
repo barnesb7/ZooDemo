@@ -10,11 +10,15 @@ public class MainMenuHandler {
     final String removeAnimalFromPen = "4";
     final String displayAllAnimalsInPen = "5";
     final String displayAllZooAnimals = "6";
+    String userInput;
 
-
-    public void handleUserInput(String userInput, Scanner scan){
+    public void handleUserInput(String userInput, Zoo ourZoo, Scanner scan){
 
        if(userInput.equals(setUpNewPen)){
+           System.out.println("What should the new pen's name be?");
+           userInput = scan.nextLine();
+           Pen newPen = new Pen(userInput);
+           ourZoo.addPen(newPen);
 
        } else if(userInput.equals(removePen)){
 

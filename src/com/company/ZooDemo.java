@@ -6,6 +6,8 @@ public class ZooDemo {
 
     public static void main(String[] args) {
 
+     Zoo ourZoo = new Zoo();
+     MainMenuHandler mainMenuHandler = new MainMenuHandler();
      Scanner scan = new Scanner(System.in);
      UserMenu userMenu = new UserMenu();
     String userInput;
@@ -13,7 +15,7 @@ public class ZooDemo {
      userMenu.showMainMenu();
      userInput = scan.nextLine();
 
-     mainMenuHandler.handleUserInput(userInput, scan);
+     mainMenuHandler.handleUserInput(userInput, ourZoo, scan);
 
     }
 }

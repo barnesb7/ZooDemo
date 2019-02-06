@@ -4,4 +4,11 @@ import java.util.ArrayList;
 
 public class Zoo {
     private ArrayList<Pen> allZooPens = new ArrayList<>();
+
+
+    public void addPen(Pen newPen){
+        allZooPens.add(newPen);
+    }
+
+
 }
